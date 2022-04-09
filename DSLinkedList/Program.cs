@@ -7,13 +7,13 @@ namespace DSLinkedList
     {
         static void Main(string[] args)
         {
-            int i=1;
-            ModifiedLinkedList<int> list1 = new ModifiedLinkedList<int>();
+            ModifiedLinkedList<int> list = new ModifiedLinkedList<int>();
             //LinkedList<int> list = new LinkedList<int>();       // Created new Linked List 
-            list1.Append(56);      // Adding first element in list
-            list1.Append(30);       // Adding element at last position
-            list1.Append(70);       // Again adding one element after 30
-            list1.DisplayElement();
+            list.Append(56); // Calling method of CustomLinkedList generic class to append 56
+            list.Append(70); // Calling method of CustomLinkedList generic class to append 70
+            list.insertBetween(new Node<int>(56) ,30, new Node<int>(70)); // Calling method of CustomLinkedList generic class to append 30 
+            list.DisplayElement(); // Calling method of CustomLinkedList generic class to display linkedlist element
+            //list.DisplayElement();
         }
     }
 }
