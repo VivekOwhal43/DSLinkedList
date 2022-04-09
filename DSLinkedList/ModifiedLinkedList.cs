@@ -39,7 +39,7 @@ namespace DSLinkedList
             Node<T> newNode = new Node<T>(data); // Creating a new node 
             if (head == null)
             {
-                head=newNode; // If head pointing to null then hode is directly pointing to new node
+                head = newNode; // If head pointing to null then hode is directly pointing to new node
                 Console.WriteLine($"{newNode.data} is appended in linked list");
                 return;
             }
@@ -55,8 +55,8 @@ namespace DSLinkedList
             }
         }
 
-        public void insertBetween(Node<T> prevNode, T data , Node<T> nextNode)
-        {          
+        public void insertBetween(Node<T> prevNode, T data, Node<T> nextNode)
+        {
             if (prevNode == null && nextNode == null) //Check if the given Node is null
             {
                 Console.WriteLine("The given previous node and next node cannot be null");
@@ -67,6 +67,18 @@ namespace DSLinkedList
             prevNode.next = newNode;    //make next of prev_node as new_node
             head = prevNode;
             Console.WriteLine($"{newNode.data} is inserted between {prevNode.data} and {nextNode.data} in linked list");
+        }
+
+        public void DeleteAtfirst()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked List is already Empty");
+                return;
+            }
+            Node<T> temp = this.head;
+            Console.WriteLine($"\nNow deleting {temp.data} ....");
+            this.head = this.head.next;
         }
     }
 }
