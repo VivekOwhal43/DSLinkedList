@@ -80,5 +80,28 @@ namespace DSLinkedList
             Console.WriteLine($"\nNow deleting {temp.data} ....");
             this.head = this.head.next;
         }
+
+        public void DeleteLastElement()
+        {
+            Node<T> temp = this.head; // Creating a temp node having head reference
+            if (temp == null) //Checking that list is empty or not
+            {
+                Console.WriteLine("Linked List is already Empty");
+                return;
+            }
+            if(temp.next == null) //Checking that list having only one node
+            {
+                Console.WriteLine($"\nNow deleting {temp.data} ....");
+                return;
+            }
+            
+            while (temp.next.next != null) // Checking that list having atleast 2 nodes
+            {
+                temp = temp.next; // Go to next node
+            }
+            Console.WriteLine($"\nNow deleting {temp.next.data} ....");
+            temp.next = null; // Deleting a last node
+        }
+
     }
 }
