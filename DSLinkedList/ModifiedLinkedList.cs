@@ -102,6 +102,25 @@ namespace DSLinkedList
             Console.WriteLine($"\nNow deleting {temp.next.data} ....");
             temp.next = null; // Deleting a last node
         }
+        public void Search(T data)
+        {
+            Node<T> temp = this.head; // Creating a temp node having head reference
+            if (temp == null) //Checking that list is empty or not
+            {
+                Console.WriteLine("\nLinked List is Empty");
+                return;
+            }
+            while(temp != null)
+            {           
+                if (data.Equals(temp.data)) // Comparing linked list data to check that element is present or not
+                {
+                    Console.WriteLine($"\n{data} is present in linked list");
+                    return;
+                }
+                temp = temp.next; // Moving to next node
+            }
+            Console.WriteLine($"\n{data} is not present in linked list");
+        }
 
     }
 }
